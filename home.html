@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Cards</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: aqua;
+            height: 100vh;
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+        }
+
+        .card-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            /* justify-content: center; */
+            gap: 10px;
+            width: 90%;
+            /* max-width: 1200px; */
+            padding: 10px;
+        }
+
+        .item {
+            width: 24%;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Medium screens (Tablets) */
+        @media (max-width: 1024px) {
+            .item {
+                width: 32%;
+            }
+        }
+
+        /* Small screens (Large Phones) */
+        @media (max-width: 768px) {
+            .item {
+                width: 49%;
+            }
+        }
+
+        /* Extra small screens (Small Phones) */
+        @media (max-width: 480px) {
+            .item {
+                width: 99%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <select id="menu" onchange="navigateToPage()">
+        <option value="">Select an option</option>
+        <option value="https://example.com/feed">Feed</option>
+        <option value="https://example.com/messages">Msg</option>
+        <option value="https://example.com/notifications">Notification</option>
+        <option value="https://example.com/test">Test</option>
+    </select>
+    <div class="container">
+        
+        <div class="card-wrapper">
+            <div class="item">
+                <h1>Card 1</h1>
+                <p>This is a test Card</p>
+            </div>
+            <div class="item">
+                <h1>Card 2</h1>
+                <p>This is a test Card</p>
+            </div>
+            <div class="item">
+                <h1>Card 3</h1>
+                <p>This is a test Card</p>
+            </div>
+            <div class="item">
+                <h1>Card 4</h1>
+                <p>This is a test Card</p>
+            </div>
+            <div class="item">
+                <h1>Card 5</h1>
+                <p>This is a test Card</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function navigateToPage() {
+            var select = document.getElementById("menu");
+            console.log(select);
+            
+            var url = select.value;
+            console.log(url);
+            return false
+            if (url) {
+                window.location.href = url; // Redirect to selected option's value
+            }
+        }
+    </script>
+</body>
+</html>
